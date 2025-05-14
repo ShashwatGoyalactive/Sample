@@ -1,19 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
+html{
+  scroll-padding-top: 152px;
+}
 body {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
   background-color: #f0f0f6;
+  overflow-x: hidden;
 }
 
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0px;
   z-index: 100;
-  width: 1440px;
+  width: 100%;
+  /* width: 1440px; */
   height: 153px;
 }
 
@@ -129,13 +134,10 @@ nav a {
 
 /* Header  */
 
-main {
-  width: 1440px;
-}
+
 
 #Hero {
-  width: 1440px;
-  height: 630px;
+  height: 783px;
   background-color: #ffffff;
 }
 
@@ -280,6 +282,10 @@ main {
   /* position: fixed; */
   position: absolute;
 }
+
+
+
+
 
 /* section Projects  */
 
@@ -428,71 +434,131 @@ main {
 /* section Recommendations */
 
 #Recommendations {
+
   position: absolute;
-  width: 1440px;
+  width: 1244px;
   top: 1957.16px;
   gap: 45px;
-  background-color: blue;
+  left: 98px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
+
 }
 
-#Carousel {
-  background-color: grey;
-  width: 1442px;
-  height: 327px;
+.carousel-container {
+  /* background-color: yellow; */
+  width: 100%;
+  overflow: visible;
+  position: relative;
+}
+
+.carousel-track {
   display: flex;
-  justify-content: center;
+  transition: transform 0.5s ease-in-out;
+  padding: 10px 0;
+  will-change: transform;
+  gap: 22px;
 }
 
-#leftBoundary {
-  background-color: lime;
-  width: 98px;
-  top: 137px;
-  right: 1343px;
-  padding: 163.5px 49px;
-  position: absolute;
-}
-
-#rightBoundary {
-  background-color: lime;
-  width: 98px;
-  top: 137px;
-  left: 1343px;
-  padding: 163.5px 49px;
-  position: absolute;
-}
-
-.carouselCard {
+.carousel-card {
+  width: 340px;
+  height: 327px;
+  padding: 25px;
+  background: #ffffff;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  background-color: white;
-  padding: 25px;
-  width: 340px;
-  gap: 45px;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: relative;
+  flex-shrink: 0;
 }
 
-.carouselRatings img {
+.carousel-stars {
   width: 142.58px;
+  height: 17.49px;
+  color: #f5a623;
+  font-size: 16px;
+  margin-bottom: 17px;
 }
 
-.carouselReview {
-  margin-top: 10px;
-  font-size: 18px;
+.carousel-card h4 {
+  width: 142.58px;
+  height: 22.15px;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
-  color: #2b2b2b;
+  font-size: 18px;
+  line-height: 124%;
+  color: #2B2B2B;
+  text-transform: capitalize;
+  margin: 0 0 15px;
 }
 
-.carouselDescription {
-  margin-top: 8px;
-  color: #444;
-  line-height: 1.4;
+.carousel-text {
   width: 287.35px;
-  height: 89.62px;
+  height: 89.63px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: #767676;
+  margin-bottom: 20px;
 }
+
+.carousel-user {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+
+.carousel-user img {
+  width: 80.74px;
+  height: 80.57px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 16px;
+}
+
+.carousel-user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #767676;
+}
+
+.carousel-user-info strong {
+  height: 22.16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 124%;
+  color: #000;
+  text-transform: capitalize;
+}
+.carousel-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.carousel-dots span {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #FFDE8D;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-dots .active {
+  background-color:#FFB400 ;
+}
+
 
 .personalInfo {
   display: flex;
@@ -534,16 +600,19 @@ main {
   top: 2536.33px;
   padding-right: 98px;
   padding-left: 98px;
-  background-color: red;
+  /* background-color: red; */
+  gap: 45px;
 }
 
 .contactPage h2 {
   margin-top: 0px;
+  background-color: #f0f0f6;
 }
+
+
 
 .messageForm {
   position: relative;
-  background-color: white;
   display: block;
   width: 846px;
 }
@@ -553,7 +622,9 @@ main {
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
+  background-color: white;
   gap: 22px;
+  padding-top: 0px;
 }
 
 .formField {
@@ -563,7 +634,7 @@ main {
 
 .formField h4 {
   margin-bottom: 0px;
-  font-family: Inter;
+  font-family: "Inter";
   font-weight: 500;
   font-size: 18px;
   line-height: 124%;
@@ -609,36 +680,71 @@ main {
 }
 
 /* contact */
-.contactInfo {
-  background-color: white;
-  width: 372.69px;
-  left: 969px;
+.contact-information {
+  /* background-color: yellow; */
+  width: 373px;
 }
 
-.contactCardsContainer {
-  background-color: red;
+.contact-heading {
+  /* height: 70px; */
+  /* background-color: blueviolet; */
 }
 
-.contactCard {
-  height: 211.11px;
-  top: 90.15px;
-  left: 969px;
-  background-color: lightblue;
+.contact-heading > h4 {
+  font-family: "Inter";
+  font-size: 1.7rem;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  margin: 0px;
 }
 
-.contactCardLogo {
-  width: 40px; /* Adjust size of the logo */
-  height: 40px;
-  border-radius: 50%;
-  background-color: #ffb400;
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  background-color: rgb(255, 255, 255);
+  height: 207.5px;
+  display: grid;
+  grid-template-rows: auto 35px 35px 35px;
+  gap: 2px;
+  padding: 10px 15px;
+}
+.card-img {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.contactCardLogo img {
+.card-img > img {
   width: 20px;
-  height: 20px;
+  aspect-ratio: 1/1;
+  background-color: #FFB400;
+  overflow: hidden;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.country {
+  padding: 0 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.country > h4 {
+  font-family:"Inter";
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: rgb(135, 136, 138);
+}
+
+.country >.value {
+  font-size: 1rem;
+  letter-spacing: 0.1px;
 }
 
 /* footer */
@@ -647,26 +753,19 @@ footer {
   position: absolute;
   width: 1440px;
   top: 3356px;
-  padding-bottom: 20px;
-  background-color: red;
   display: flex;
   flex-direction: column;
   justify-content: start;
-  gap: 45px;
+  left: 98px;
 }
 
-footer ul {
-  list-style: none;
-  padding: 0px;
-  margin: 0px;
-}
 
 .logos {
   width: 970px;
   height: 144px;
   display: flex;
   justify-content: space-evenly;
-  background-color: yellow;
+  align-self: center;
 }
 
 .footerNavigations {
@@ -676,31 +775,58 @@ footer ul {
 
 .frame {
   width: 1244px;
+  height: 230px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: yellow;
+}
+
+.frame .ratingLogos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.ratingSubLinks{
+  width: 149px;
+  font-family: "Inter";
+font-weight: 400;
+font-size: 12px;
+line-height: 18px;
+text-transform: capitalize;
+
 }
 
 .frame .visitingLinks {
   display: flex;
   flex-direction: row;
   width: 780px;
+  height: 202px;
   justify-content: space-between;
 }
 
 .frame .sublinks {
-  background-color: lightsalmon;
-  gap: 8px;
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* gap: 8px; */
   a {
     color: #000;
     text-decoration: none;
   }
 }
 
+.frame .links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
 .frame .subheading {
-  background-color: lightblue;
-  font-family: Inter;
+  font-family: "Inter";
   font-weight: 700;
   font-size: 20px;
   line-height: 30px;
@@ -722,4 +848,33 @@ footer ul {
 
 .ratingSubLinks img {
   width: 91px;
+}
+
+
+.socialImages{
+  width: 125px;
+}
+
+.copyRightSection{
+  align-self: center;
+height: 56px;
+gap: 10px;
+padding-top: 16px;
+padding-bottom: 16px;
+display: flex;
+}
+
+.copyRight{
+
+}
+
+.copyRightContent{
+height: 24px;
+font-family: "Inter";
+font-weight: 400;
+font-size: 15px;
+line-height: 24px;
+letter-spacing: 0%;
+text-transform: capitalize;
+color: #767676;
 }
